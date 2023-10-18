@@ -8,5 +8,7 @@ export const ROUTES: Route[] = [
   {path: 'protected', loadComponent: () => import('./features/protected/protected.component').then(mod => mod.ProtectedComponent), canActivate: [AuthGuard]},
   {path: 'admin', loadComponent: () => import('./features/admin/admin.component').then(mod => mod.AdminComponent), canActivate: [AuthGuard]},
   {path: 'callback', loadComponent: () => import('./features/callback/callback.component').then(mod => mod.CallbackComponent)},
+  {path: 'scopes', loadComponent: () => import('./features/scopes/scopes.component').then(mod => mod.ScopesComponent)},
+  {path: 'access-token', loadComponent: () => import('./features/access-token/access-token.component').then(mod => mod.AccessTokenComponent), canActivate: [AuthGuard]},
   {path: '**', loadComponent: () => import('./features/not-found/not-found.component').then(mod => mod.NotFoundComponent)},
 ];

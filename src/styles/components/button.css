@@ -68,7 +68,9 @@
 }
 
 .button__login,
-.button__logout {
+.button__logout,
+.button__scopes,
+.button__refresh-token {
   min-width: 8.4rem;
 
   border: 0.1rem solid var(--indigo);

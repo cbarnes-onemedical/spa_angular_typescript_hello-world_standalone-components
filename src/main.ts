@@ -23,6 +23,8 @@ bootstrapApplication(AppComponent, {
       HttpClientModule,
       AuthModule.forRoot({
         ...environment.auth0,
+        cacheLocation: 'localstorage',
+        useRefreshTokens: true,
         httpInterceptor: {
           allowedList: [`${environment.api.serverUrl}/api/messages/admin`, `${environment.api.serverUrl}/api/messages/protected`],
         },

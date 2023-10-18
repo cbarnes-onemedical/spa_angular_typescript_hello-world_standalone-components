@@ -1,0 +1,26 @@
+<app-page-layout>
+  <div class="content-layout">
+    <h1 id="page-title" class="content__title">Scope Selection Page</h1>
+    <div class="content__body">
+      <p id="page-description">
+        <span>
+          Interstitial allowing the user to select which scopes they want to authorize.
+        </span>
+      </p>
+      
+      <app-code-snippet
+        title="Session Token Payload"
+        [code]="sessionTokenPayloadJson"
+      ></app-code-snippet>
+
+      <ng-container *ngIf="scopes">
+        <label *ngFor="let scope of scopes; let i=index" style="display: block;">
+          <input type="checkbox" [checked]="scopes[i].checked" (change)="scopes[i].checked = !scopes[i].checked">
+          {{scopes[i].name}}
+        </label>
+
+        <button class="button__scopes" (click)="handleAuthorizeScopes()">Authorize Scopes</button>
+      </ng-container>
+    </div>
+  </div>
+</app-page-layout>

@@ -1,0 +1,22 @@
+<app-page-layout>
+  <div class="content-layout">
+    <h1 id="page-title" class="content__title">Access Token Page</h1>
+    <div class="content__body">
+      <!-- <p id="page-description">
+        <span>
+          You can click button to get a new Access token utilizing the Refresh token.
+        </span>
+        <span>
+          <strong>Only authenticated users can access this page.</strong>
+        </span>
+      </p> -->
+      <ng-container *ngIf="accessToken$ | async as accessToken">
+          <app-code-snippet
+            [title]="title"
+            [code]="getDecodedAccessToken(accessToken)"
+          ></app-code-snippet>
+      </ng-container>
+      <button class="button__refresh-token mt-2" (click)="getAccessToken(true)">Force Refresh</button>
+    </div>
+  </div>
+</app-page-layout>

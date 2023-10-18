@@ -1,0 +1,1 @@
+export const SCOPE_SELECTION_SCOPES = 'openid profile email offline_access launch/patient patient/AllergyIntolerance.read patient/Encounter.read';

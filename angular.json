@@ -60,7 +60,9 @@
           "options": {
             "browserTarget": "spa-angular-typescript-hello-world:build",
             "port": 4040,
-            "host": "0.0.0.0"
+            "host": "0.0.0.0",
+            "disableHostCheck": true,
+            "ssl": true
           },
           "configurations": {
             "production": {
